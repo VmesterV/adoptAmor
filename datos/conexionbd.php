@@ -3,7 +3,7 @@
     $servidor ="localhost";
     $usuario ="adoptAmor";
     $password ="";
-    $bd ="DB_adoptAmor";
+    $bd ="db_adoptamor";
     
     // Se establece la conexión a la base de datos específica
     $con = mysqli_connect($servidor,$usuario,$password,$bd);
