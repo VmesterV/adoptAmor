@@ -1,7 +1,7 @@
 <?php
      // Parámetros de conexión al servidor MySQL (sin seleccionar base de datos)
     $servidor ="localhost";
-    $usuario ="alexander";
+    $usuario ="adoptAmor";
     $password ="";
     
     // Se establece la conexión al servidor

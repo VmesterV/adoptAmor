@@ -1,9 +1,9 @@
 <?php
     // Parámetros de conexión incluyendo la base de datos
     $servidor ="localhost";
-    $usuario ="alexander";
+    $usuario ="adoptAmor";
     $password ="";
-    $bd ="bdusuario";
+    $bd ="DB_adoptAmor";
     
     // Se establece la conexión a la base de datos específica
     $con = mysqli_connect($servidor,$usuario,$password,$bd);
