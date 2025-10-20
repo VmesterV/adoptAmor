@@ -1,0 +1,41 @@
+#carrito {
+  margin-top: 30px;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#carrito h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+#lista-carrito li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#vaciar-carrito {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#vaciar-carrito:hover {
+  background-color: #c62828;
+}
+
+@media (max-width: 768px) {
+  #lista-productos {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

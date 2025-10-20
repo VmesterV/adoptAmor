@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #ff6b6b; 
+    --secondary-color: #4a90e2; 
+    --background-light: #f4f4f4;
+    --text-light: #333;
+    --card-bg-light: #ffffff;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Definición del Dark Mode --- */
+.dark-mode {
+    --primary-color: #ff7d7d;
+    --secondary-color: #79a8e8;
+    --background-light: #1e1e1e;
+    --text-light: #f0f0f0;
+    --card-bg-light: #333333;
+    --shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+/* --- Base y Tipografía --- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: var(--background-light);
+    color: var(--text-light);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s; /* Transición suave al cambiar modo */
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
