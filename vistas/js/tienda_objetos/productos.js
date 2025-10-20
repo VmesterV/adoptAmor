@@ -13,3 +13,4 @@ const productos = [
   { id: 10, nombre: "ropa de perro + tallas", descripcion: "Lo mejor de lo mejor en ropa para tu amigo canino favorito.", precio: 60.00, imagen: "https://www.macropaparamascotas.com/wp-content/uploads/2025/05/ropa-perro-camisetas.webp", stock: 10 }
 ];
 
+
