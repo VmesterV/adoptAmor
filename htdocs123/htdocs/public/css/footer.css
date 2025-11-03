@@ -1,0 +1,16 @@
+/*
+ * ========================================
+ * ARCHIVO CSS PARA FOOTER
+ * ========================================
+ */
+
+/* Bootstrap ya se encarga del fondo y color de texto.
+   Solo personalizamos el enlace. */
+footer a {
+    color: var(--color-primario) !important; /* Tu color naranja */
+    text-decoration: none;
+}
+footer a:hover {
+    color: var(--color-primario-hover) !important;
+}
+

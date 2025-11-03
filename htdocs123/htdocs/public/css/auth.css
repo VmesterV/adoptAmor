@@ -1,0 +1,281 @@
+/* public/css/auth.css */
+:root {
+    --color-fondo: #fefaf6;
+    --color-acento: #e07a5f;
+    --color-acento-hover: #d1664a;
+    --color-secundario: #81b29a;
+    --color-texto: #3d405b;
+    --color-texto-claro: #6d6875;
+    --color-borde: #e9ecef;
+    --color-error: #c0392b;
+    --color-exito: #27ae60;
+    
+    --radio-botones: 12px;
+    --radio-tarjeta: 20px;
+    --sombra-tarjeta: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --fuente-principal: 'Nunito', sans-serif;
+}
+
+/* Modo oscuro */
+[data-bs-theme="dark"] {
+    --color-fondo: #1a1a1a;
+    --color-texto: #ffffff;
+    --color-texto-claro: #cccccc;
+    --color-borde: #444444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Formulario */
+main#main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.seccion-login,
+.seccion-registro,
+.seccion-recuperacion {
+    width: 100%;
+    max-width: 420px;
+}
+
+.tarjeta {
+    background: var(--color-fondo);
+    padding: 2rem;
+    border-radius: var(--radio-tarjeta);
+    box-shadow: var(--sombra-tarjeta);
+    border: 1px solid var(--color-borde);
+    position: relative;
+}
+
+.icono-huella {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-acento);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(224, 122, 95, 0.4);
+}
+
+.titulo-login,
+.titulo-registro,
+.titulo-recuperacion {
+    text-align: center;
+    margin: 1rem 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.instrucciones {
+    text-align: center;
+    color: var(--color-texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+/* Formularios */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo-formulario {
+    position: relative;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    font-size: 0.9rem;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio-botones);
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    color: var(--color-texto);
+    background: var(--color-fondo);
+    transition: all 0.3s ease;
+}
+
+.campo-formulario input:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.2);
+}
+
+.icono-campo {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    color: var(--color-texto-claro);
+    font-size: 1rem;
+}
+
+/* Mensajes */
+.form-message {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.form-message.error {
+    background-color: rgba(192, 57, 43, 0.1);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+.form-message.success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--color-exito);
+    border: 1px solid var(--color-exito);
+}
+
+/* Botones */
+.boton-principal {
+    background: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: var(--radio-botones);
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.boton-principal:hover {
+    background: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+/* Enlaces */
+.opciones-adicionales {
+    text-align: right;
+    margin: 0.5rem 0;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: var(--color-acento);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: var(--color-acento-hover);
+    text-decoration: underline;
+}
+
+.enlace-registro,
+.enlace-login,
+.enlace-volver {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+}
+
+.boton-secundario {
+    background: var(--color-borde);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--radio-botones);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background: #ddd;
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+/* Imagen lateral */
+.imagen-lateral {
+    flex: 1;
+    background: linear-gradient(135deg, var(--color-acento), var(--color-secundario));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.imagen-lateral h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .imagen-lateral {
+        display: none;
+    }
+    
+    .contenedor-principal {
+        flex-direction: column;
+    }
+    
+    main#main-content {
+        min-height: 100vh;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        padding: 1.5rem;
+        box-shadow: none;
+    }
+    
+    .titulo-login,
+    .titulo-registro,
+    .titulo-recuperacion {
+        font-size: 1.3rem;
+    }
+}

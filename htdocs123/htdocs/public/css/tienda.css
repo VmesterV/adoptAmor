@@ -1,0 +1,94 @@
+/*
+ * ========================================
+ * ARCHIVO CSS PARA PÁGINA DE TIENDA
+ * ========================================
+ * - Los títulos de sección están en base.css
+ * - Las tarjetas de productos están en base.css
+ */
+
+/* (Este archivo puede estar vacío o 
+   contener estilos muy específicos
+   solo para la página de la tienda) */
+
+
+/* Estilo para la tarjeta "Agregar producto" */
+.agregar-producto-card {
+  border: 2px dashed #adb5bd;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.agregar-producto-card:hover {
+  border-color: #0d6efd;
+  background: #f0f8ff;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.15);
+}
+
+.agregar-producto-card .icon-container {
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 50%;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.agregar-producto-card:hover .icon-container {
+  background-color: rgba(13, 110, 253, 0.2);
+}
+
+.agregar-producto-card .btn {
+  font-weight: 500;
+}
+
+/* ==== Ajustes visuales para la cuadrícula de productos ==== */
+
+/* Centra las tarjetas cuando hay pocas */
+#lista-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Mantiene alineadas las columnas y fija proporciones */
+#lista-productos .col {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tamaño uniforme para todas las tarjetas */
+#lista-productos .card {
+  width: 100%;
+  min-height: 360px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInCard 0.5s forwards;
+}
+
+/* Efecto hover */
+#lista-productos .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegura que las imágenes mantengan proporción */
+#lista-productos .card img {
+  object-fit: cover;
+  height: 220px;
+  width: 100%;
+}
+
+/* ==== Animación de entrada ==== */
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

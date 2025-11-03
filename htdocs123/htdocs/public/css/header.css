@@ -1,0 +1,41 @@
+/*
+ * ========================================
+ * ARCHIVO CSS PARA HEADER (NAVBAR)
+ * ========================================
+ * - Estiliza elementos específicos del
+ * componente navbar de Bootstrap.
+ */
+
+.navbar-brand h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+.navbar-brand span {
+    color: #ff0000; /* Mantenemos el rojo de "Amor" */
+}
+
+/* Botón Dark Mode */
+.btn-dark-mode {
+    background: none;
+    border: 2px solid var(--bs-light);
+    color: var(--bs-light);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-dark-mode:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+[data-bs-theme="dark"] .btn-dark-mode {
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+}
+[data-bs-theme="dark"] .btn-dark-mode:hover {
+    background: rgba(224, 122, 95, 0.2);
+}
+
+

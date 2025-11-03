@@ -1,0 +1,230 @@
+/* ========================================
+ * ARCHIVO CSS BASE PARA ADOPTAAMOR
+ * ========================================
+ * - Define variables de color (Tema)
+ * - Define el Modo Oscuro
+ * - Define estilos globales (body, títulos)
+ * - ¡NUEVO! Define las clases para JS personalizado
+ */
+
+/* =================================== */
+/* =     1. IMPORTACIÓN DE FUENTE    = */
+/* =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* =================================== */
+/* =     2. VARIABLES DE COLOR       = */
+/* =================================== */
+:root, [data-bs-theme="light"] {
+    /* Tu paleta de colores "AdoptAmor" */
+    --color-primario: #e07a5f;      /* Naranja suave (Usado para botones y acentos) */
+    --color-primario-hover: #d1664a;
+    --color-secundario: #81b29a;  /* Verde menta (Usado para precios y héroes) */
+    --color-fondo: #fefaf6;       /* Beige claro (Fondo de la página) */
+    --color-tarjeta: #ffffff;     /* Blanco (Fondo de tarjetas y modales) */
+    --color-texto: #3d405b;      /* Azul oscuro (Texto principal) */
+    --color-texto-claro: #6d6875; /* Gris (Texto secundario) */
+    --color-borde: #f0f0f0;
+
+    /* Sobrescribir variables de Bootstrap */
+    --bs-primary: var(--color-primario);
+    --bs-primary-rgb: 224, 122, 95;
+    --bs-secondary: var(--color-secundario);
+    --bs-secondary-rgb: 129, 178, 154;
+    --bs-body-bg: var(--color-fondo);
+    --bs-body-color: var(--color-texto);
+    --bs-border-color: var(--color-borde);
+    --bs-border-radius: 0.75rem; /* 12px */
+    --bs-card-border-color: var(--color-borde);
+    --bs-card-bg: var(--color-tarjeta);
+    --bs-card-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --bs-modal-bg: var(--color-tarjeta);
+    --bs-offcanvas-bg: var(--color-tarjeta);
+    --bs-font-sans-serif: 'Nunito', sans-serif;
+    --bs-heading-color: var(--color-texto);
+}
+
+[data-bs-theme="dark"] {
+    --color-primario: #e07a5f;
+    --color-primario-hover: #d1664a;
+    --color-secundario: #81b29a;
+    --color-fondo: #1e1e1e;       /* Fondo oscuro */
+    --color-tarjeta: #2a2a2a;     /* Tarjetas oscuras */
+    --color-texto: #f0f0f0;      /* Texto claro */
+    --color-texto-claro: #999;
+    --color-borde: #3a3a3a;
+
+    /* Sobrescribir variables de Bootstrap para Modo Oscuro */
+    --bs-primary: var(--color-primario);
+    --bs-primary-rgb: 224, 122, 95;
+    --bs-secondary: var(--color-secundario);
+    --bs-secondary-rgb: 129, 178, 154;
+    --bs-body-bg: var(--color-fondo);
+    --bs-body-color: var(--color-texto);
+    --bs-border-color: var(--color-borde);
+    --bs-card-bg: var(--color-tarjeta);
+    --bs-modal-bg: var(--color-tarjeta);
+    --bs-offcanvas-bg: var(--color-tarjeta);
+    --bs-heading-color: var(--color-texto);
+}
+
+/* =================================== */
+/* =     3. ESTILOS GLOBALES         = */
+/* =================================== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Evita que el footer se suba en páginas cortas */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    /* El contenido principal crece para empujar el footer */
+    flex-grow: 1;
+}
+
+/* Títulos de Sección (para Mascotas y Tienda) */
+.section-title {
+    color: var(--bs-body-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 2.5rem auto 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--bs-primary); /* Usa el color primario de BS */
+    display: inline-block;
+}
+.section-title-wrapper {
+    text-align: center;
+}
+
+/* Estilo de Tarjeta (Card) Personalizado */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bs-card-box-shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.1));
+}
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+
+/* * ===========================================
+ * = 4. LÓGICA DE MODAL/OFFCANVAS MANUAL     =
+ * ===========================================
+ * Esto reemplaza el JS de Bootstrap
+*/
+
+/* --- Backdrop Manual --- */
+/* (El .modal-backdrop de Bootstrap CSS requiere JS) */
+#modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040; /* Debajo del modal (1050), encima de todo lo demás */
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.15s linear;
+    pointer-events: none; /* No se puede hacer clic por defecto */
+}
+#modal-backdrop.is-visible {
+    opacity: 0.5;
+    pointer-events: auto; /* Se puede hacer clic (para cerrar) */
+}
+
+/* --- Control Manual del Offcanvas (Carrito) --- */
+/* .offcanvas (de Bootstrap) ya lo posiciona fuera de la pantalla */
+.offcanvas {
+    transition: transform 0.3s ease-in-out;
+}
+.offcanvas.is-visible {
+    transform: none; /* .show de Bootstrap es 'transform: none' */
+}
+
+/* --- Control Manual del Modal (Adopción) --- */
+/* .modal (de Bootstrap) ya lo oculta (display: none) */
+.modal {
+    transition: opacity 0.15s linear;
+}
+.modal.is-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* --- Control Manual del Navbar Collapse (Móvil) --- */
+.navbar-collapse {
+    /* Transición para el colapso */
+    transition: height 0.3s ease;
+}
+@media (max-width: 991.98px) {
+    /* .collapse (de Bootstrap) lo oculta */
+    .navbar-collapse:not(.is-visible) {
+        display: none;
+    }
+    .navbar-collapse.is-visible {
+        display: block;
+    }
+}
+/* Tarjetas para agregar nuevo */
+.border-dashed {
+    border: 2px dashed #dee2e6 !important;
+}
+.border-dashed:hover {
+    border-color: #0d6efd !important;
+}
+/* Estilos para filtros y buscadores */
+.btn-group .btn.active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.border-dashed {
+    border: 2px dashed #dee2e6 !important;
+    transition: all 0.3s ease;
+}
+
+.border-dashed:hover {
+    border-color: #0d6efd !important;
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Animaciones para filtros */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Badges para tipos de mascotas */
+.badge.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+.badge.bg-success {
+    background-color: #198754 !important;
+}
+
+/* Estilos para el buscador */
+#resultados-busqueda {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Tarjetas con hover mejorado */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}

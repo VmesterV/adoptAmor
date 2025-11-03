@@ -1,0 +1,21 @@
+/*
+ * ========================================
+ * ARCHIVO CSS PARA PÁGINA DE MASCOTAS
+ * ========================================
+ * - Estiliza el componente Hero
+ * - Los títulos de sección están en base.css
+ * - Las tarjetas de mascotas están en base.css
+ */
+
+#hero {
+    background-color: var(--bs-secondary); /* Usa el color secundario del tema */
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: var(--bs-border-radius);
+    text-align: center;
+}
+#hero h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+

@@ -1,0 +1,50 @@
+/*
+ * ========================================
+ * ARCHIVO CSS PARA CARRITO (OFFCANVAS)
+ * ========================================
+ * - Estiliza el contenido del
+ * offcanvas de Bootstrap.
+ */
+
+.carrito-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+.carrito-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.carrito-item-info {
+    flex-grow: 1;
+}
+.carrito-item-info h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--bs-body-color);
+}
+.carrito-item-info p {
+    font-size: 0.9rem;
+    color: var(--color-secundario);
+    margin: 0;
+    font-weight: 700;
+}
+.carrito-item-cantidad {
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+}
+
+.total-carrito {
+    font-weight: 700;
+    color: var(--bs-body-color);
+}
